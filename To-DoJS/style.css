@@ -1,12 +1,22 @@
-body{
-    align-items: center;
+body {
+    display: flex;
+    flex-direction: column;  /* stack form above displayer */
+    align-items: center;     /* center everything horizontally */
+    margin: 0;              /* remove default browser margin */
+    padding: 20px;
 }
 
-h1{
-    text-align: center;
-    position: sticky;
+.form {
+    text-align: center; /* center text inside the form */
 }
 
-form{
-    
+input {
+    width: 300px;
+    padding: 8px;
+    margin-top: 10px;
+}
+#displayer {
+    margin-top: 2cm;  /* still push list down */
+    width: 320px;     /* match input width */
+    text-align: left; /* tasks align nicely to left */
 }
