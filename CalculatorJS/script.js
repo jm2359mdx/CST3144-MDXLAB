@@ -1,18 +1,34 @@
-//declare what ever going to use in code!
-const displayEl = document.getElementById('display');
-let currentValue = 0;
-let previousValue= '';
-let operator = null; 
-let shouldResetDisplay = false;
+// Get references
+const display = document.getElementById("display");
+const buttons = document.querySelectorAll("button");
 
-//made initial display show 0
-// displayEl.value = currentValue;
+// Variable to hold what’s shown
+let currentInput = "";
 
-// const buttons = document.querySelectorAll('.buttons button');
+// Loop through every button
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    const value = button.textContent;
 
-// buttons.forEach(button => {
-//     button.addEventListener('click', () =>{
-//         const label = button.textContent.trim();
-       
-//     });
-// });
+    if (value === "C") {
+      // Clear everything
+      currentInput = "";
+      display.value = "";
+    } 
+    else if (value === "=") {
+      try {
+        // Evaluate the expression
+        currentInput = eval(currentInput);
+        display.value = currentInput;
+      } catch (error) {
+        display.value = "Error";
+        currentInput = "";
+      }
+    } 
+    else {
+      // Add button text to display
+      currentInput += value;
+      display.value = currentInput;
+    }
+  });
+});
