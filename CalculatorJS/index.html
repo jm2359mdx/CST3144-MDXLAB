@@ -3,44 +3,45 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Calculator</title>
+  <title>Vue Calculator</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- ✅ Vue 3 CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-  <div class="calculator">
+  <!-- Vue Root -->
+  <div id="app" class="calculator">
     <div class="display">
-      <input type="text" id="display" disabled>
+      <input type="text" id="display" v-model="display" disabled>
     </div>
+
     <div class="buttons">
-      <!-- Row 1 -->
-      <button>C</button>
-      <button>/</button>
-      <button>*</button>
-      <button>-</button> <br>
+      <button @click="clear">C</button>
+      <button @click="append('/')">/</button>
+      <button @click="append('*')">*</button>
+      <button @click="append('-')">-</button> <br>
 
-      <!-- Row 2 -->
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button>+</button><br>
+      <button @click="append('7')">7</button>
+      <button @click="append('8')">8</button>
+      <button @click="append('9')">9</button>
+      <button @click="append('+')">+</button><br>
 
-      <!-- Row 3 -->
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button>=</button><br>
+      <button @click="append('4')">4</button>
+      <button @click="append('5')">5</button>
+      <button @click="append('6')">6</button>
+      <button @click="calculate">=</button><br>
 
-      <!-- Row 4 -->
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>0</button>
+      <button @click="append('1')">1</button>
+      <button @click="append('2')">2</button>
+      <button @click="append('3')">3</button>
+      <button @click="append('0')">0</button>
 
-      <!-- Row 5 -->
-      <button>.</button>
+      <button @click="append('.')">.</button>
     </div>
   </div>
 
+  <!-- ✅ Connect external Vue logic -->
   <script src="script.js"></script>
 </body>
 </html>

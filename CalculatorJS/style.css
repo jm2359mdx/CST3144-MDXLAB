@@ -1,11 +1,9 @@
 body {
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-    max-width: 720px;
-    margin: 40px auto;
-    padding: 0 16px;
-
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 0 16px;
 }
-
 
 button {
   color: rgb(16, 16, 16);
@@ -17,5 +15,4 @@ button {
 
 button:hover {
   background-color: #fefefe;
-  
 }
